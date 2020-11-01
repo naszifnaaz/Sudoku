@@ -314,3 +314,35 @@ def main():
                 if event.key == pygame.K_DELETE:
                     board.clear()
                     key = None
+                if event.key == pygame.K_SPACE:
+                    board.solve_gui()
+
+                if event.key == pygame.K_RETURN:
+                    i, j = board.selected
+                    if board.cubes[i][j].temp != 0:
+                        if board.place(board.cubes[i][j].temp):
+                            print("Success")
+                        else:
+                            print("Wrong")
+                            strikes += 1
+                        key = None
+
+                        if board.is_finished():
+                            print("Game over")
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                pos = pygame.mouse.get_pos()
+                clicked = board.click(pos)
+                if clicked:
+                    board.select(clicked[0], clicked[1])
+                    key = None
+
+        if board.selected and key != None:
+            board.sketch(key)
+
+        redraw_window(win, board, play_time, strikes)
+        pygame.display.update()
+
+
+main()
+pygame.quit()
