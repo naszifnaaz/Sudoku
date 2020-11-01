@@ -2,7 +2,7 @@
 This is a sudoku solver using the backtracking algorithm.
 
 ## Instructions
-Run GUI.py to play sudoku.
+Run sudoku.py to play sudoku.
 
 Click a box to input a number.
 
