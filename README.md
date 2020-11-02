@@ -1,5 +1,5 @@
-# Sudoku Solver
-This is a sudoku solver using the backtracking algorithm.
+# Sudoku 
+This is a sudoku game using the backtracking algorithm.
 
 ## Instructions
 Run sudoku.py to play sudoku.
